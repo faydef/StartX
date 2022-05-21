@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Form from './views/form/form'
 import User from './views/newUser/user';
 import NavBar from './components/navBar/navBar';
+import Interview from './views/interview/interview';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path="/form" element={<Form />}>
           </Route>
           <Route path="/user" element={<User />}>
+          </Route>
+          <Route path="/interview" element={<Interview />}>
           </Route>
         </Routes>
       </div>
