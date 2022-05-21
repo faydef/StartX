@@ -6,7 +6,7 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class Interviewer {
+export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -18,4 +18,7 @@ export class Interviewer {
 
   @Column({ unique: true })
   email: string;
+
+  @Column()
+  role: string;
 }
