@@ -53,7 +53,7 @@ export class FormsService {
 
   async findByCandidate(username: string): Promise<Form[] | undefined> {
     return this.formsRepository.find({
-      where: [{ candidate: username }, { interviwer: username }],
+      where: [{ candidate: username }],
     });
   }
 

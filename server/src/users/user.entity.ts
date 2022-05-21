@@ -1,7 +1,11 @@
+import { Form } from 'src/forms/form.entity';
+import { Interview } from 'src/interviews/interview.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToMany,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -21,4 +25,10 @@ export class User {
 
   @Column()
   role: string;
+
+  @OneToMany(() => Form, (form) => form.user)
+  forms: Form[];
+
+  @ManyToMany(() => Interview, (interview) => interview.attendees)
+  interviews: Interview[];
 }

@@ -2,13 +2,14 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
+  JoinTable,
+  ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { User } from 'src/users/user.entity';
 
 @Entity()
-export class Form {
+export class Interview {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -22,8 +23,9 @@ export class Form {
   candidate: string;
 
   @Column()
-  rating: number;
+  date: Date;
 
-  @ManyToOne(() => User, (user) => user.forms)
-  user: User;
+  @ManyToMany(() => User, (user) => user.interviews)
+  @JoinTable()
+  attendees: User[];
 }
