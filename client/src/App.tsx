@@ -16,7 +16,7 @@ function App() {
       <div>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<PublicPage />}>
+          <Route path="/" element={<Login />}>
           </Route>
           <Route path="/form" element={<Form />}>
           </Route>
@@ -37,7 +37,3 @@ function App() {
 }
 
 export default App;
-
-function PublicPage () {
-  return <h3>Public</h3>
-}
