@@ -19,7 +19,7 @@ I have implemented the following features
 
 -I chose Sqlite3 for my database and an ORM called TypeOPM which makes it just as easy as modifying a few lines of codes to switch to other databases such as Mysql or others 
 -The structure of the database is described in the following picture :
-![Db picture](image.png "Db picture")
+![Db picture](dbPicture.png "Db picture")
 
 ## 3. Instructions to run the app
 
