@@ -58,14 +58,14 @@ const Candidate = () => {
     feed += interview.noteID+ '\n'
     feed += interview.notePC+ '\n'})
     var doc = new jsPDF('p', 'pt');
-    doc.text( 'Score',20, 20)
+    doc.text( 'Score for '+CandidateName,20, 20)
     doc.setFont('helvetica')
     doc.text('meanPC: '+ meanPC+'/5',20, 60)
     doc.text('meanID: '+ meanID+'/5',20, 80)
     doc.text('meanTD: '+ meanTD+'/5',20, 100)
     doc.text('meanEX: '+ meanEX+'/5',20, 120)
     doc.addPage()
-    doc.text( 'Feedback',20, 20)
+    doc.text( 'Feedback for '+CandidateName,20, 20)
     doc.setFont('helvetica')
     doc.text( feed,20, 100)
     doc.save('Result_'+CandidateName+'.pdf')
@@ -88,7 +88,7 @@ const Candidate = () => {
                   <legend>Candidate name</legend>
                   <input type="text" placeholder="What are you looking for" onChange={(e) => setCandidateName(e.target.value)}></input>
                 <p>
-                  {'The saved interviewer name is ' + CandidateName}
+                  {'The saved candidate name is ' + CandidateName}
                 </p>
                 </fieldset>
                 { data.length >= 1

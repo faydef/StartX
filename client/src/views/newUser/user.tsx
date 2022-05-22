@@ -24,21 +24,18 @@ const User = () => {
           <div style={{ padding: '20px' }}>
                 <fieldset>
                   <legend>user's name</legend>
-                  <input type="text" placeholder="What are you looking for" onChange={(e) => setInterviewerName(e.target.value)}></input>
-                <p>
-                  {'The username you entered is : ' + interviewerName}
-                </p>
+                  <textarea placeholder="What are you looking for" onChange={(e) => setInterviewerName(e.target.value)}></textarea>
                 </fieldset>
                 <fieldset>
                   <legend>user's role</legend>
-                  <input type="text" placeholder="What are you looking for" onChange={(e) => setInterviewerRole(e.target.value)}></input>
+                  <textarea placeholder="What are you looking for" onChange={(e) => setInterviewerRole(e.target.value)}></textarea>
                 <p>
                   {'The username you entered is : ' + interviewerRole}
                 </p>
                 </fieldset>
                 <fieldset>
                   <legend>user's email</legend>
-                  <input type="text" placeholder="What are you looking for" onChange={(e) => setInterviewerMail(e.target.value)}></input>
+                  <textarea placeholder="What are you looking for" onChange={(e) => setInterviewerMail(e.target.value)}></textarea>
                 <button onClick={sendForm}> Sign up </button>
                 <p>
                   {'The email you entered is : ' + interviewerMail}
