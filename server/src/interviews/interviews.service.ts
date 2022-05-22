@@ -18,7 +18,7 @@ export class InterviewsService {
   async create(
     interviewer: string,
     candidate: string,
-    date: string,
+    date: Date,
   ): Promise<Interview> {
     try {
       const newInterview = await this.interviewsRepository.create({
@@ -58,7 +58,7 @@ export class InterviewsService {
     });
   }
 
-  async update(id: number, date: string): Promise<Interview> {
+  async update(id: number, date: Date): Promise<Interview> {
     const interview = await this.findOne(id);
     interview.date = date;
     return this.interviewsRepository.save(interview);

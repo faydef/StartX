@@ -32,7 +32,7 @@ export class InterviewsController {
     body: {
       interviewer: string;
       candidate: string;
-      date: string;
+      date: Date;
     },
   ) {
     console.log(body);

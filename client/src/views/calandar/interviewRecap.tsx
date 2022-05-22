@@ -2,6 +2,7 @@ import { FunctionComponent, useState } from 'react'
 import * as React from 'react'
 import './interviewRecap.css'
 import { Interview } from './schedule'
+import { useNavigate } from 'react-router-dom';
 
 interface InterviewProps {
   interviewer: string;
@@ -13,7 +14,7 @@ const InterviewRecap: FunctionComponent<InterviewProps> = ({
   data
 }) => {
   const [isHovered, setIsHovered] = useState('not-hovered')
-  //   const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleMouseOver = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
@@ -26,9 +27,9 @@ const InterviewRecap: FunctionComponent<InterviewProps> = ({
   ) => {
     setIsHovered('not-hovered')
   }
-  // navigate to review page with candidate as state
+
   const handleClick = () => {
-    //       navigate()
+    navigate('/form/?candidate=' + data.candidate)
   }
 
   return (

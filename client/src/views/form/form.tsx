@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react'
 import * as React from 'react'
 import axios from 'axios'
 import { Rating } from '@mui/material'
+import { useLocation } from 'react-router-dom'
 const Form = () => {
-  const [candidateName, setCandidateName] = useState('gh')
+  const search = useLocation().search
+  const candidate = new URLSearchParams(search).get('candidate')
+  const [candidateName, setCandidateName] = useState(candidate)
   const [interviewerName, setInterviewerName] = useState('vb')
   const [ratingPC, setRatingPC] = useState(0)
   const [ratingTD, setRatingTD] = useState(0)
@@ -13,7 +16,6 @@ const Form = () => {
   const [noteTD, setNoteTD] = useState('')
   const [noteEX, setNoteEX] = useState('')
   const [noteID, setNoteID] = useState('')
-
 
   useEffect(() => {
     setRatingPC(0)

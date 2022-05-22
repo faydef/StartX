@@ -21,7 +21,7 @@ const NavBar = () => {
                 <li onClick={() => handleNavigation('form')}> Evaluate a Candidate </li>
                 <li onClick={() => handleNavigation('user')}> Add an interviewer </li>
                 <li onClick={() => handleNavigation('interview')}> Schedule an interview </li>
-
+                <li onClick={() => handleNavigation('schedule')}> Check today's planning </li>
             </div>
         </ul>
       </div>

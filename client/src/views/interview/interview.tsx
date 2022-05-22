@@ -24,7 +24,7 @@ const Interview = () => {
       axios.post('http://localhost:8000/interviews', {
         interviewer: interviewerName,
         candidate: candidateName,
-        date: interviewDate.toString(),
+        date: interviewDate,
       }).then(() => reset());
   }
   return (
