@@ -2,6 +2,8 @@
 
 This repository is an answer to the take home assignement for StartX 
 
+## 0. demonstration
+    You can check the video in the gitlab repository as I had trouble screen recording my macbook (internal error)
 ## 1. Overview of the features
 
 I have implemented the following features
@@ -16,7 +18,8 @@ I have implemented the following features
 ## 2. Choice for the Database and its structure
 
 -I chose Sqlite3 for my database and an ORM called TypeOPM which makes it just as easy as modifying a few lines of codes to switch to other databases such as Mysql or others 
--The structure of the database is described in the following picture 
+-The structure of the database is described in the following picture :
+![Db picture](image.png "Db picture")
 
 ## 3. Instructions to run the app
 
