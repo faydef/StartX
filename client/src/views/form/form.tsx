@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import * as React from 'react'
 import axios from 'axios'
 import { Rating } from '@mui/material'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 const Form = () => {
   const search = useLocation().search
   const candidate = new URLSearchParams(search).get('candidate')
@@ -16,6 +16,7 @@ const Form = () => {
   const [noteTD, setNoteTD] = useState('')
   const [noteEX, setNoteEX] = useState('')
   const [noteID, setNoteID] = useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
     setRatingPC(0)
@@ -34,6 +35,9 @@ const Form = () => {
     };
   }, []);
 
+  const handleClick = () => {
+    navigate('/candidate/?candidate=' + candidateName)
+  }
 
   const sendForm = () => {
       axios.post('http://localhost:8000/forms', {
@@ -51,6 +55,7 @@ const Form = () => {
   }
   return (
           <div style={{ padding: '20px' }}>
+                <button onClick = {()=>{handleClick()}}>Check other ratings</button>
                 <fieldset>
                   <legend>interviewer's name</legend>
                   <input type="text" placeholder="interviewer's name" onChange={(e) => setInterviewerName(e.target.value)}></input>
