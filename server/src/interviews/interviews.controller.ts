@@ -16,7 +16,7 @@ export class InterviewsController {
     return this.interviewsService.findOne(+id);
   }
 
-  @Get(':name')
+  @Get('/interview/:name')
   findByInterviwewer(@Param('name') name: string) {
     return this.interviewsService.findByInterviwewer(name);
   }

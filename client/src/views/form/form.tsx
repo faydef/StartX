@@ -7,7 +7,7 @@ const Form = () => {
   const search = useLocation().search
   const candidate = new URLSearchParams(search).get('candidate')
   const [candidateName, setCandidateName] = useState(candidate)
-  const [interviewerName, setInterviewerName] = useState('vb')
+  const [interviewerName, setInterviewerName] = useState('')
   const [ratingPC, setRatingPC] = useState(0)
   const [ratingTD, setRatingTD] = useState(0)
   const [ratingEX, setRatingEX] = useState(0)
@@ -17,16 +17,6 @@ const Form = () => {
   const [noteEX, setNoteEX] = useState('')
   const [noteID, setNoteID] = useState('')
   const navigate = useNavigate()
-
-  useEffect(() => {
-    setRatingPC(0)
-  }, [candidateName])
-  
-  const reset = () => {
-    setCandidateName('')
-    setInterviewerName('')
-    setRatingPC(0)
-  }
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('name')|| '{}');
@@ -51,18 +41,11 @@ const Form = () => {
         noteTD: noteTD,
         noteEX: noteEX,
         noteID: noteID
-      }).then(() => reset());
+      }).then(() => {navigate('/candidate/?candidate='+candidateName)});
   }
   return (
           <div style={{ padding: '20px' }}>
                 <button onClick = {()=>{handleClick()}}>Check other ratings</button>
-                <fieldset>
-                  <legend>interviewer's name</legend>
-                  <input type="text" placeholder="interviewer's name" onChange={(e) => setInterviewerName(e.target.value)}></input>
-                <p>
-                  {'The interviewer name you entered is : ' + interviewerName}
-                </p>
-                </fieldset>
                 <fieldset>
                   <legend>Candidate's name</legend>
                   <input type="text" placeholder="Candidate's name" onChange={(e) => setCandidateName(e.target.value)}></input>
@@ -80,7 +63,6 @@ const Form = () => {
                 }}
                 />
                   <input type="text" placeholder="your note" onChange={(e) => setNotePC(e.target.value)}></input>
-                  <button onClick={()=>sendForm()}> search </button>
                 <p>
                   {'The name you entered is : ' + notePC}
                 </p>
@@ -95,7 +77,6 @@ const Form = () => {
                 }}
                 />
                   <input type="text" placeholder="Your note" onChange={(e) => setNoteTD(e.target.value)}></input>
-                  <button onClick={()=>sendForm()}> search </button>
                 <p>
                   {'The name you entered is : ' + noteTD}
                 </p>
@@ -110,7 +91,6 @@ const Form = () => {
                 }}
                 />
                   <input type="text" placeholder="Your note" onChange={(e) => setNoteEX(e.target.value)}></input>
-                  <button onClick={()=>sendForm()}> search </button>
                 <p>
                   {'The name you entered is : ' + noteEX}
                 </p>
@@ -125,11 +105,11 @@ const Form = () => {
                 }}
                 />
                   <input type="text" placeholder="Your note" onChange={(e) => setNoteID(e.target.value)}></input>
-                  <button onClick={()=>sendForm()}> search </button>
                 <p>
                   {'The name you entered is : ' + noteID}
                 </p>
                 </fieldset>
+                <button onClick={()=>sendForm()}> validate </button>
         </div>
   )
 }

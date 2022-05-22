@@ -96,16 +96,16 @@ const Candidate = () => {
                 return (
                         <fieldset key={index}>
                             <legend>interviewer: {interview.interviewer}</legend>
-                            <Typography component="legend">noteEX</Typography>
+                            <Typography component="legend">comment EX</Typography>
                             <Rating name="read-only" value={interview.ratingEX} readOnly />
                             <p>comments :{interview.noteEX}</p>
-                            <Typography component="legend">noteEX</Typography>
+                            <Typography component="legend">comment PC</Typography>
                             <Rating name="read-only" value={interview.ratingPC} readOnly />
                             <p>comments :{interview.notePC}</p>
-                            <Typography component="legend">noteEX</Typography>
+                            <Typography component="legend">comment TD</Typography>
                             <Rating name="read-only" value={interview.ratingTD} readOnly />
                             <p>comments :{interview.noteTD}</p>
-                            <Typography component="legend">noteEX</Typography>
+                            <Typography component="legend">comment ID</Typography>
                             <Rating name="read-only" value={interview.ratingID} readOnly />
                             <p>comments :{interview.noteID}</p>
                         </fieldset>

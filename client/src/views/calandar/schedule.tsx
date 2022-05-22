@@ -11,6 +11,7 @@ export interface Interview {
     creationDate: string,
 }
 const Schedule = () => {
+  const [interviewer,setInterviewer]=useState('')
   const aBeforeB = (a: any, b: any): number => {
     const aDate = new Date(a.date)
     const bDate = new Date(b.date)
@@ -20,7 +21,11 @@ const Schedule = () => {
   const [data2, setData2] = useState<Interview[]>([{ id:1, creationDate:"",date: new Date(2022, 4, 22, 12, 30, 0), interviewer: 'interviewer1', candidate: 'candidate1' }])
 
   useEffect(() => {
-    axios.get('http://localhost:8000/interviews').then(res => {
+  const items = JSON.parse(localStorage.getItem('name')|| '{}');
+  if (items) {
+    setInterviewer(items)
+  };
+    axios.get('http://localhost:8000/interviews/interview/'+items).then(res => {
     const interviews = res.data;
     console.log(interviews)
     setData2(interviews);
