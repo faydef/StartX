@@ -66,11 +66,11 @@ export class FormsService {
     }
   }
 
-  async findByCandidate(username: string): Promise<Form | undefined> {
-    console.log(typeof username);
-    const candidate = await this.formsRepository.findOne({
+  async findByCandidate(username: string): Promise<Form[] | undefined> {
+    const candidate = await this.formsRepository.find({
       where: { candidate: username },
     });
+    console.log(candidate)
     return candidate;
   }
 
