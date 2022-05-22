@@ -27,14 +27,28 @@ export class FormsController {
     body: {
       interviewer: string;
       candidate: string;
-      rating: number;
+      ratingPC: number;
+      ratingTD: number;
+      ratingEX: number;
+      ratingID: number;
+      notePC: string;
+      noteTD: string;
+      noteEX: string;
+      noteID: string;
     },
   ) {
-    console.log(body)
+    console.log(body);
     return this.formsService.create(
       body.interviewer,
       body.candidate,
-      body.rating,
+      body.ratingPC,
+      body.ratingTD,
+      body.ratingEX,
+      body.ratingID,
+      body.notePC,
+      body.noteTD,
+      body.noteEX,
+      body.noteID,
     );
   }
 }

@@ -17,13 +17,27 @@ export class FormsService {
   async create(
     interviewer: string,
     candidate: string,
-    rating: number,
+    ratingPC: number,
+    ratingTD: number,
+    ratingEX: number,
+    ratingID: number,
+    notePC: string,
+    noteTD: string,
+    noteEX: string,
+    noteID: string,
   ): Promise<Form> {
     try {
       const newForm = await this.formsRepository.create({
-        interviewer,
         candidate,
-        rating,
+        interviewer,
+        ratingPC,
+        ratingTD,
+        ratingEX,
+        ratingID,
+        notePC,
+        noteTD,
+        noteEX,
+        noteID,
       });
       return this.formsRepository.save(newForm);
     } catch (err) {
@@ -57,9 +71,9 @@ export class FormsService {
     });
   }
 
-  async update(id: number, rating: number): Promise<Form> {
+  async update(id: number, ratingID: number): Promise<Form> {
     const form = await this.findOne(id);
-    form.rating = rating;
+    form.ratingID = ratingID;
     return this.formsRepository.save(form);
   }
 

@@ -22,7 +22,28 @@ export class Form {
   candidate: string;
 
   @Column()
-  rating: number;
+  ratingPC: number;
+
+  @Column()
+  ratingTD: number;
+
+  @Column()
+  ratingEX: number;
+
+  @Column()
+  ratingID: number;
+
+  @Column()
+  notePC: string;
+
+  @Column()
+  noteTD: string;
+
+  @Column()
+  noteEX: string;
+
+  @Column()
+  noteID: string;
 
   @ManyToOne(() => User, (user) => user.forms)
   user: User;
