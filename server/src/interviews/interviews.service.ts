@@ -11,13 +11,14 @@ import { Interview } from './interview.entity';
 @Injectable()
 export class InterviewsService {
   constructor(
-    @InjectRepository(Interview) private interviewsRepository: Repository<Interview>,
+    @InjectRepository(Interview)
+    private interviewsRepository: Repository<Interview>,
   ) { }
 
   async create(
     interviewer: string,
     candidate: string,
-    date: Date,
+    date: string,
   ): Promise<Interview> {
     try {
       const newInterview = await this.interviewsRepository.create({
@@ -57,7 +58,7 @@ export class InterviewsService {
     });
   }
 
-  async update(id: number, date: Date): Promise<Interview> {
+  async update(id: number, date: string): Promise<Interview> {
     const interview = await this.findOne(id);
     interview.date = date;
     return this.interviewsRepository.save(interview);

@@ -23,7 +23,7 @@ export class Interview {
   candidate: string;
 
   @Column()
-  date: Date;
+  date: string;
 
   @ManyToMany(() => User, (user) => user.interviews)
   @JoinTable()

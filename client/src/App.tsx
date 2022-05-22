@@ -6,6 +6,8 @@ import Form from './views/form/form'
 import User from './views/newUser/user';
 import NavBar from './components/navBar/navBar';
 import Interview from './views/interview/interview';
+import Login from './views/login/login';
+import Schedule from './views/calandar/schedule';
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
           <Route path="/user" element={<User />}>
           </Route>
           <Route path="/interview" element={<Interview />}>
+          </Route>
+          <Route path="/login" element={<Login />}>
+          </Route>
+          <Route path="/schedule" element={<Schedule />}>
           </Route>
         </Routes>
       </div>

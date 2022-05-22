@@ -1,4 +1,4 @@
-import {  useState } from 'react'
+import {  useEffect, useState } from 'react'
 import * as React from 'react'
 import axios from 'axios'
 import DatePicker from 'react-date-picker';
@@ -14,6 +14,13 @@ const Interview = () => {
     setinterviewDate(new Date())
   }
 
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('name')|| '{}');
+    if (items) {
+        setInterviewerName(items);
+    };
+  }, []);
+
   const sendForm = () => {
       axios.post('http://localhost:8000/interviews', {
         interviewer: interviewerName,
@@ -24,7 +31,7 @@ const Interview = () => {
   return (
           <div style={{ padding: '20px' }}>
                 <fieldset>
-                  <legend>interviwer</legend>
+                  <legend>interviewer</legend>
                   <input type="text" placeholder="What are you looking for" onChange={(e) => setInterviewerName(e.target.value)}></input>
                 <p>
                   {'The interviewer you entered is : ' + interviewerName}

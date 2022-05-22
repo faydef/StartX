@@ -16,6 +16,13 @@ const Form = () => {
     setRating('')
   }
 
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('name')|| '{}');
+    if (items) {
+        setInterviewerName(items);
+    };
+  }, []);
+
 
   const sendForm = () => {
       axios.post('http://localhost:8000/forms', {

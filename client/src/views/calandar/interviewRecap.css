@@ -1,0 +1,86 @@
+p.description {
+    max-height: 270px;
+    overflow-y: auto;
+}
+
+.follow-button {
+    position: absolute;
+    z-index: 1;
+    right: -90px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin:0;
+}
+.wrapperProp {
+    display: flex;
+    padding: 15px;
+    padding-left: 0px;
+    flex: 1;
+    justify-content: flex-start;
+    vertical-align: middle;
+}
+
+.hovering-action {
+    display: flex;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    cursor: pointer;
+    clip-path: inset( -100vw 0 -100vw -100vw );
+}
+.margedContainer.not-hovered .follow-button {
+    display: none;
+}
+.margedContainer.hovered {
+    margin-right: 110px;
+    border-width: 1px;
+    box-sizing: border-box;
+}
+.containerInterview {
+    border-radius: 15px;
+    border: solid 1px black;
+    width: 100%;
+    background-color:#fafafa;
+    position: relative;
+}
+
+.horizontal-align {
+    display: flex;
+    align-items: center;
+}
+
+.wrapperProp .properties {
+    margin: 3px;
+    margin-left: 25px;
+    line-height: 25px;
+    height: auto;
+}
+
+.margedContainer {
+    border-radius: 10px;
+    min-height: 100px;
+    box-sizing: border-box;
+    z-index:2;
+    position: relative;
+    width:100%;
+    transition-property: margin;
+    transition-duration: 1s;
+    height: 100%;
+}
+
+button.choose {
+    background-color: #37d05a;
+}
+
+.properties.title {
+    margin: 20px 0px 5px 25px;
+}
+
+
+@media screen and (max-width: 730px) {
+
+    .containerInterview .horizontal-align {
+        flex-direction: column;
+    }
+}

@@ -27,7 +27,7 @@ export class InterviewsController {
     body: {
       interviewer: string;
       candidate: string;
-      date: Date;
+      date: string;
     },
   ) {
     console.log(body);
