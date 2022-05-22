@@ -16,6 +16,11 @@ export class InterviewsController {
     return this.interviewsService.findOne(+id);
   }
 
+  @Get(':name')
+  findByInterviwewer(@Param('name') name: string) {
+    return this.interviewsService.findByInterviwewer(name);
+  }
+
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.interviewsService.remove(+id);

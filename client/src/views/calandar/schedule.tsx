@@ -17,7 +17,7 @@ const Schedule = () => {
   const today = new Date()
   const [data2, setData2] = useState({})
   const data = [
-    { date: new Date(2022, 5, 22, 12, 30, 0), interviewer: 'interviewer1', candidate: 'candidate1' },
+    { date: new Date(2022, 4, 22, 12, 30, 0), interviewer: 'interviewer1', candidate: 'candidate1' },
     { date: new Date(2022, 5, 22, 11, 0, 0), interviewer: 'interviewer1', candidate: 'candidate2' }]
 
   useEffect(() => {

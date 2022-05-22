@@ -16,6 +16,12 @@ export class FormsController {
     return this.formsService.findOne(+id);
   }
 
+  @Get('/candidate/:name')
+  findByCandidate(@Param('name') name: string) {
+    console.log(name)
+    return this.formsService.findByCandidate(name);
+  }
+
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.formsService.remove(+id);

@@ -52,9 +52,9 @@ export class InterviewsService {
     }
   }
 
-  async findByCandidate(username: string): Promise<Interview[] | undefined> {
+  async findByInterviwewer(username: string): Promise<Interview[] | undefined> {
     return this.interviewsRepository.find({
-      where: [{ candidate: username }],
+      where: [{ interviewer: username }],
     });
   }
 

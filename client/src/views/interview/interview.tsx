@@ -9,7 +9,6 @@ const Interview = () => {
   const [interviewDate, setinterviewDate] = useState(new Date())
   
   const reset = () => {
-    setInterviewerName('')
     setcandidateName('')
     setinterviewDate(new Date())
   }

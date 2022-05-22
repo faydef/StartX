@@ -59,16 +59,19 @@ export class FormsService {
   async findOne(id: number): Promise<Form> {
     try {
       const form = await this.formsRepository.findOneOrFail(id);
+      console.log(form);
       return form;
     } catch (err) {
       throw err;
     }
   }
 
-  async findByCandidate(username: string): Promise<Form[] | undefined> {
-    return this.formsRepository.find({
-      where: [{ candidate: username }],
+  async findByCandidate(username: string): Promise<Form | undefined> {
+    console.log(typeof username);
+    const candidate = await this.formsRepository.findOne({
+      where: { candidate: username },
     });
+    return candidate;
   }
 
   async update(id: number, ratingID: number): Promise<Form> {
