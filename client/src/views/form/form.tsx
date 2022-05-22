@@ -48,7 +48,7 @@ const Form = () => {
                 <button onClick = {()=>{handleClick()}}>Check other ratings</button>
                 <fieldset>
                   <legend>Candidate's name</legend>
-                  <input type="text" placeholder="Candidate's name" onChange={(e) => setCandidateName(e.target.value)}></input>
+                  <textarea  placeholder="Candidate's name" onChange={(e) => setCandidateName(e.target.value)}></textarea>
                 <p>
                   {'The Candidate name you entered is : ' + candidateName}
                 </p>
@@ -62,10 +62,7 @@ const Form = () => {
                 setRatingPC(newValue?newValue:0);
                 }}
                 />
-                  <input type="text" placeholder="your note" onChange={(e) => setNotePC(e.target.value)}></input>
-                <p>
-                  {'The name you entered is : ' + notePC}
-                </p>
+                  <textarea placeholder="your note" onChange={(e) => setNotePC(e.target.value)}></textarea>
                 </fieldset>
                 <fieldset>
                   <legend>Team Dynamics</legend>
@@ -76,10 +73,7 @@ const Form = () => {
                 setRatingTD(newValue?newValue:0);
                 }}
                 />
-                  <input type="text" placeholder="Your note" onChange={(e) => setNoteTD(e.target.value)}></input>
-                <p>
-                  {'The name you entered is : ' + noteTD}
-                </p>
+                  <textarea placeholder="Your note" onChange={(e) => setNoteTD(e.target.value)}></textarea>
                 </fieldset>
                 <fieldset>
                   <legend>Ability to Execute</legend>
@@ -90,10 +84,7 @@ const Form = () => {
                 setRatingEX(newValue?newValue:0);
                 }}
                 />
-                  <input type="text" placeholder="Your note" onChange={(e) => setNoteEX(e.target.value)}></input>
-                <p>
-                  {'The name you entered is : ' + noteEX}
-                </p>
+                  <textarea placeholder="Your note" onChange={(e) => setNoteEX(e.target.value)}></textarea>
                 </fieldset>
                 <fieldset>
                   <legend>Idea</legend>
@@ -104,10 +95,7 @@ const Form = () => {
                 setRatingID(newValue?newValue:0);
                 }}
                 />
-                  <input type="text" placeholder="Your note" onChange={(e) => setNoteID(e.target.value)}></input>
-                <p>
-                  {'The name you entered is : ' + noteID}
-                </p>
+                  <textarea placeholder="Your note" onChange={(e) => setNoteID(e.target.value)}></textarea>
                 </fieldset>
                 <button onClick={()=>sendForm()}> validate </button>
         </div>
